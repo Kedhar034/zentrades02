@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Display Table</title>
+</head>
+<body>
+    <h1>Table Display</h1>
+    <form action="/displayhandling" method="get">
+        <table>
+            <thead>
+                <tr>
+                    <% availableFields.forEach(field => { %>
+                        <th><%= field %></th>
+                    <% }); %>
+                </tr>
+            </thead>
+            <tbody>
+                <% Object.values(products).forEach(product => { %>
+                    <tr>
+                        <% availableFields.forEach(field => { %>
+                            <td><%= product[field] %></td>
+                        <% }); %>
+                    </tr>
+                <% }); %>
+            </tbody>
+        </table>
+    </form>
+    
+</body>
+</html>

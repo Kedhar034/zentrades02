@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Import Products</title>
+</head>
+<body>
+    <h1>Import Products</h1>
+    <form method="get" action="/index.js">
+        <table border="1">
+            <thead>
+                <tr>
+                    <th>Subcategory</th>
+                    <th>Title</th>
+                    <th>Price</th>
+                    <th>Popularity</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% Object.values(products).forEach(product => { %>
+                    <tr>
+                        <td><%= product.subcategory %></td>
+                        <td><%= product.title %></td>
+                        <td><%= product.price %></td>
+                        <td><%= product.popularity %></td>
+                    </tr>
+                <% }) %>
+            </tbody>
+        </table>
+    </form>
+    
+</body>
+</html>
